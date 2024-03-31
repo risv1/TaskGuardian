@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev ./main.ts",
+    "dev": "ts-node-dev --poll ./main.ts",
     "build": "rimraf ./build && tsc",
     "start": "pnpm run build && node ./build/main.js",
     "db:generate": "drizzle-kit generate:pg",
