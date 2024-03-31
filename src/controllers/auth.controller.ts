@@ -6,6 +6,7 @@ import { db } from "../database/db";
 import { users } from "../database/schema";
 import { eq } from "drizzle-orm";
 import { config } from "dotenv";
+import { User } from "../models/user";
 
 config();
 
@@ -18,7 +19,7 @@ export const Register = async (req: Request, res: Response) => {
 
     const passwordHash = await bcrypt.hash(password, 10);
 
-    const user = {
+    const user: User = {
       id: id,
       name: name,
       email: email,
